@@ -5,6 +5,20 @@
 #include "spi.h"
 #include "edl7141.h"
 
+#define	SATURATE(a, Min, Max)	(a)=(a)>(Max)?(Max):(a)<(Min)?(Min):(a)
+#define	MAX(A,B) 		((A) > (B)? (A): (B))
+#define	MIN(A,B) 		((A) < (B)? (A): (B))
+#define	ABS(Val) 		((Val) > 0? (Val): -(Val))
+
+
+typedef signed char		tS8;
+typedef unsigned char	 	tU8;
+typedef signed	short int	tS16;
+typedef unsigned short int	tU16;
+typedef signed	int		tS32;
+typedef unsigned int		tU32;
+typedef signed	long long	tS64;
+typedef unsigned long long	tU64;
 
 #define NB_EDL_REGS 32 //(NB_CFG_REGS + NB_ST_REGS)
 
